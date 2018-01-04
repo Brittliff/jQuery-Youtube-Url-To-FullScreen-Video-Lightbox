@@ -14,11 +14,15 @@ To install the plugin do the following :
 
 Add the **jquery.yu2fvl.css** to your project in the `<head></head>`
 
-`<link href="dist/jquery.yu2fvl.css" rel="stylesheet" type="text/css">`
+```html
+<link href="dist/jquery.yu2fvl.css" rel="stylesheet" type="text/css">
+```
 
 Add the **jquery.yu2fvl.js** to your project AFTER loading jQuery
 
-`<script src="/dist/jquery.yu2fvl.js"></script>`
+```html
+<script src="/dist/jquery.yu2fvl.js"></script>
+```
 
 You can find both files in **dist/** with the js minified or
 You can find both files in **src/** with the js' original code
@@ -30,51 +34,58 @@ To build just open your console in the folder and run "gulp" after your changes 
 ## Usage
 
 Very simple : target an anchor, apply the plugin.
+```html
+<a class="play-1" href="https://www.youtube.com/watch?v=AbTUw7aTITg">Play my video</a>
 
-`<a class="play-1" href="https://www.youtube.com/watch?v=AbTUw7aTITg">Play my video</a>`
-
-`<script>`
-`  $('.play-1').yu2fvl();`
-`</script>`
+<script>
+  $('.play-1').yu2fvl();
+</script>
+```
 
 You can also directly pass a **youtube video id** to the plugin
+```html
+<button class="play-1">Play my video</button>
 
-`<button class="play-1">Play my video</button>`
-
-`<script>`
-`  $('.play-1').yu2fvl({ vid: 'QImBolnTVH8' });`
-`</script>`
+<script>
+  $('.play-1').yu2fvl({ vid: 'QImBolnTVH8' });
+</script>
+```
 
 To auto-open a video on page load with an element to trigger it back later
+```html
+<a class="play-1" href="https://www.youtube.com/watch?v=AbTUw7aTITg">Play my video</a>
 
-`<a class="play-1" href="https://www.youtube.com/watch?v=AbTUw7aTITg">Play my video</a>`
-
-`<script>`
-`  $('.play-1').yu2fvl({ open: true });`
-`</script>`
+<script>
+  $('.play-1').yu2fvl({ open: true });
+</script>
+```
 
 To auto-open a video on page load just once : **vid** (youtube video id) option is required
 
-`<script>`
-`  $.yu2fvl({ vid: 'AbTUw7aTITg', open: true });`
-`</script>`
+```html
+<script>
+  $.yu2fvl({ vid: 'AbTUw7aTITg', open: true });
+</script>
+```
 
 All this works perfectly with different anchors on the same selector with different href
 
-`<a class="play-1" href="https://www.youtube.com/watch?v=ID-1">Play my video</a>`
+```html
+<a class="play-1" href="https://www.youtube.com/watch?v=ID-1">Play my video</a>
 
-`<a class="play-2" href="https://www.youtube.com/watch?v=ID-2">Play my video</a>`
+<a class="play-2" href="https://www.youtube.com/watch?v=ID-2">Play my video</a>
 
-`<a class="play-3" href="https://www.youtube.com/watch?v=ID-3">Play my video</a>`
+<a class="play-3" href="https://www.youtube.com/watch?v=ID-3">Play my video</a>
 
-`<a class="play-4" href="https://www.youtube.com/watch?v=ID-4">Play my video</a>`
+<a class="play-4" href="https://www.youtube.com/watch?v=ID-4">Play my video</a>
+```
 
 ...
-
-`<script>`
-`  $('.play-1, .play-2, .play-3, .play-4').yu2fvl();`
-`</script>`
-
+```html
+<script>
+  $('.play-1, .play-2, .play-3, .play-4').yu2fvl();
+</script>
+```
 The various youtube url formats acceptable :
 
 * http://www.youtube.com/watch?v=QImBolnTVH8
@@ -83,36 +94,18 @@ The various youtube url formats acceptable :
 * https://www.youtube.com/watch?list=RDQImBolnTVH8&amp;v=QImBolnTVH8#t=6
 
 ## Options
-
-*minPaddingX*: 50,
-// the space you want on **top* and **bottom** when centering the video (value is divided by 2)
-
-*minPaddingY*: 50,
-// the space you want on **left* and **right** when centering the video (value is divided by 2)
-
-*ratio*: 16/9,
-// choose the ration you want for your video
-
-*cssClass*: "yu2fvl",
-// set a namespace / global css class
-
-*overlayCssClass*: "-overlay",
-// give a suffix css class for the overlay 
-
-*iframeCssClass*: "-iframe",
-// give a suffix css class for the iframe 
-
-*closeCssClass*: "-close",
-// give a suffix css class for the close button 
-
-*closeText*: "X",
-// give some text for the close button
-
-*vid*: false
-// set directly a youtube video id (though using an anchor is cool for SEO !)
-
-*open*: false
-// Open the lightbox immediately from JavaScript. Requires *vid* to be set to work properly.
+```js
+minPaddingX: 50, // the space you want on **top* and **bottom** when centering the video (value is divided by 2)
+minPaddingY: 50, // the space you want on **left* and **right** when centering the video (value is divided by 2)
+ratio: 16/9, // choose the ration you want for your video
+cssClass: "yu2fvl", // set a namespace / global css class
+overlayCssClass: "-overlay", // give a suffix css class for the overlay 
+iframeCssClass: "-iframe", // give a suffix css class for the iframe 
+closeCssClass: "-close", // give a suffix css class for the close button 
+closeText: "X", // give some text for the close button
+vid: false, // set directly a youtube video id (though using an anchor is cool for SEO !)
+open: false // Open the lightbox immediately from JavaScript. Requires *vid* to be set to work properly.
+```
 
 ## Contributing
 
